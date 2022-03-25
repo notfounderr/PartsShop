@@ -147,7 +147,6 @@
             android:layout_marginTop="14dp"
             android:layout_toEndOf="@+id/minBut"
             android:layout_toRightOf="@id/minBut"
-            android:autoText="false"
             android:fontFamily="@font/aldrich"
             android:text="0"
             android:textAlignment="center"
