@@ -139,16 +139,18 @@
 
         <TextView
             android:id="@+id/countText"
-            android:layout_width="wrap_content"
+            android:layout_width="38dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/price"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="14dp"
             android:layout_toEndOf="@+id/minBut"
             android:layout_toRightOf="@id/minBut"
+            android:autoText="false"
             android:fontFamily="@font/aldrich"
             android:text="0"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="22sp"></TextView>
 
@@ -169,7 +171,8 @@
 
 
     </RelativeLayout>
-<Button
+
+    <Button
     android:text="Add to cart"
     android:textColor="@android:color/white"
     android:layout_width="match_parent"
