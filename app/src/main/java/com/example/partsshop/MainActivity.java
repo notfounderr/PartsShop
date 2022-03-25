@@ -27,6 +27,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createSpin();
+
+        createHashMap();
+
+    }
+    void createHashMap(){
+        price = new HashMap();
+        price.put("CPU", 300.0);
+        price.put("GPU", 998.0);
+        price.put("HDD", 210.0);
+        price.put("SSD", 300.0);
+        price.put("RAM", 110.0);
+        price.put("Motherboard", 140.0);
+        price.put("PSU", 170.0);
+    }
+    void createSpin() {
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
         spin = new ArrayList();
@@ -41,18 +58,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinadp =  new ArrayAdapter(this, android.R.layout.simple_spinner_item, spin);
         spinadp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinadp);
-
-        price = new HashMap();
-        price.put("CPU", 300.0);
-        price.put("GPU", 998.0);
-        price.put("HDD", 210.0);
-        price.put("SSD", 300.0);
-        price.put("RAM", 110.0);
-        price.put("Motherboard", 140.0);
-        price.put("PSU", 170.0);
-
-
-
     }
 
     public void increaseQuantity(View view) {
@@ -84,21 +89,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ImageView itemImageView = findViewById(R.id.cpu);
 
-        if (itemprice.equals("CPU")) {
-            itemImageView.setImageResource(R.drawable.intelproc);
-        } else if (itemprice.equals("GPU")) {
-            itemImageView.setImageResource(R.drawable.gpu);
-        }else if (itemprice.equals("HDD")) {
-            itemImageView.setImageResource(R.drawable.hdd);
-        }else if (itemprice.equals("SSD")){
-            itemImageView.setImageResource(R.drawable.ssd);
-        }else if (itemprice.equals("RAM")){
-            itemImageView.setImageResource(R.drawable.ram);
-        }else if (itemprice.equals("Motherboard")){
-            itemImageView.setImageResource(R.drawable.mothboard);
-        }else if (itemprice.equals("PSU")){
-            itemImageView.setImageResource(R.drawable.psu);
+        switch (itemprice){
+            case "CPU":
+                itemImageView.setImageResource(R.drawable.intelproc);
+                break;
+            case "GPU":
+                itemImageView.setImageResource(R.drawable.gpu);
+                break;
+            case "HDD":
+                itemImageView.setImageResource(R.drawable.hdd);
+                break;
+            case "SSD":
+                itemImageView.setImageResource(R.drawable.ssd);
+                break;
+            case "RAM":
+                itemImageView.setImageResource(R.drawable.ram);
+                break;
+            case "Motherboard":
+                itemImageView.setImageResource(R.drawable.mothboard);
+                break;
+            case "PSU":
+                itemImageView.setImageResource(R.drawable.psu);
+                break;
         }
+
     }
 
 
