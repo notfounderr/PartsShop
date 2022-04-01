@@ -1,11 +1,14 @@
 package com.example.partsshop;
 
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,12 +25,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     HashMap price;
     String itemprice;
     double priceitem;
+    EditText userNameEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        userNameEditText = findViewById(R.id.nameEditText);
         createSpin();
 
         createHashMap();
@@ -119,6 +123,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void addToCart(View view) {
+        Cart cart = new Cart();
+
+        cart.userName = userNameEditText.getText().toString();
+
+
+        cart.itemName = itemprice;
+
+        cart.quantity = countqua;
+
+        cart.orderprice = countqua * priceitem;
+
+
 
     }
 }
